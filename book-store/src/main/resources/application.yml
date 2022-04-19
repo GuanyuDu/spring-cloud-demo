@@ -21,7 +21,13 @@ spring:
     listener:
       simple:
         prefetch: 1 # 每次仅预取一条消息
-        acknowledge-mode: manual # 手动确认消息
+        acknowledge-mode: auto # 自动确认消息
+        retry:
+          enabled: true
+          max-attempts: 3
+          initial-interval: 1000ms
+          max-interval: 10000ms
+          multiplier: 2
 
 management:
   server:

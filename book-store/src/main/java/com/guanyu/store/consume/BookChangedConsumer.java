@@ -3,6 +3,7 @@ package com.guanyu.store.consume;
 import com.guanyu.provider.book.domain.BookInfo;
 import com.guanyu.provider.book.domain.BookInfoDTO;
 import com.rabbitmq.client.Channel;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.Exchange;
 import org.springframework.amqp.rabbit.annotation.Queue;
@@ -15,6 +16,7 @@ import java.io.IOException;
 /**
  * @author Guanyu
  */
+@Slf4j
 @Component
 public class BookChangedConsumer {
 
@@ -26,19 +28,9 @@ public class BookChangedConsumer {
     public void listenBookChanged(BookInfo bookInfo, Message message, Channel channel) {
         try {
             System.out.println(new BookInfoDTO(bookInfo));
-            long deliveryTag = message.getMessageProperties().getDeliveryTag();
-            if ("择天记".equals(bookInfo.getTitle())) {
-                throw new RuntimeException();
-            }
-            channel.basicAck(deliveryTag, false);
 
         } catch (Exception e) {
-            e.printStackTrace();
-            try {
-                channel.basicRecover();
-            } catch (IOException e2) {
-                e2.printStackTrace();
-            }
+            log.error("Oops! Encounter a error.", e);
         }
     }
 }
