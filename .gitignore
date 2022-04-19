@@ -2,7 +2,9 @@ HELP.md
 unite-book/target/
 book-store/target/
 book-provider/target/
-!.mvn/wrapper/maven-wrapper.jar
+unite-book/.mvn/
+unite-book/mvnw
+unite-book/mvnw.cmd
 
 ### STS ###
 .apt_generated
