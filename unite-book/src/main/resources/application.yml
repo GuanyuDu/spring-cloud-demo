@@ -8,10 +8,17 @@ spring:
       discovery:
         cluster-name: Shanghai
         ephemeral: false
-      server-addr: 127.0.0.1:8848
+      server-addr: 127.0.0.1:18848
     sentinel:
       transport:
         dashboard: 127.0.0.1:8080
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    virtual-host: /
+    username: guest
+    password: guest
+
 management:
   server:
     port: 8021

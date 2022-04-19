@@ -6,7 +6,6 @@ import org.springframework.context.annotation.Import;
 
 /**
  * provider 包扫描路径
- *
  * @author Guanyu
  */
 @Configuration

@@ -1,5 +1,7 @@
 package com.guanyu.book.domain;
 
+import com.guanyu.book.constant.BookTypeEnum;
+
 /**
  * @author Guanyu
  */
@@ -9,16 +11,18 @@ public class BookInfo {
     private String title;
     private String cover;
     private String author;
+    private BookTypeEnum type;
     private String description;
 
     public BookInfo() {
     }
 
-    public BookInfo(Long cbId, String title, String cover, String author, String description) {
+    public BookInfo(Long cbId, String title, String cover, String author, BookTypeEnum type, String description) {
         this.cbId = cbId;
         this.title = title;
         this.cover = cover;
         this.author = author;
+        this.type = type;
         this.description = description;
     }
 
@@ -52,6 +56,14 @@ public class BookInfo {
 
     public void setAuthor(String author) {
         this.author = author;
+    }
+
+    public BookTypeEnum getType() {
+        return type;
+    }
+
+    public void setType(BookTypeEnum type) {
+        this.type = type;
     }
 
     public String getDescription() {

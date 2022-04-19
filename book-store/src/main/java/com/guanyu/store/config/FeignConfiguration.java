@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
+ * OpenFeign 配置类
  * @author Guanyu
  */
 @Configuration
