@@ -9,6 +9,7 @@
 - 负载均衡：LoadBalancer
 - 限流、熔断组件：Sentinel
 - 网关组件：Spring Cloud Gateway
+- 消息队列：RabbitMQ
 
 ## 目录说明
 
